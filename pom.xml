@@ -53,7 +53,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.4.1</version>
+            <version>5.9.0</version>
         </dependency>
 
         <dependency>
@@ -69,6 +69,12 @@
             <version>4.13.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>2.2</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -76,14 +82,14 @@
             <plugin>
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
-                <version>3.9.0</version>
-                <exections>
+                <version>2.0.0</version> <!-- Asegúrate de que esta versión sea la correcta -->
+                <executions>
                     <execution>
                         <goals>
                             <goal>aggregate</goal>
                         </goals>
                     </execution>
-                </exections>
+                </executions>
             </plugin>
         </plugins>
     </build>
