@@ -11,7 +11,7 @@ public class Hooks {
 
     @Before
     public void setUp() {
-        DriverManager.initDriver();
+       // DriverManager.initDriver();
         OnStage.setTheStage(new OnlineCast());
     }
 }
