@@ -13,9 +13,9 @@ public class SeleccionarClase implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Esperar.segundos(10),
+                Esperar.segundos(5),
                 //WaitUntil.the(FormularioDatos.CLASE_VEHICULAR, isEnabled()).forNoMoreThan(10).seconds(),
-                Click.on(FormDatosVehiculares.CLASE_VEHICULAR_SELECT),
+                Click.on(FormDatosVehiculares.CLASE_VEHICULAR_LIST),
                 Click.on(FormDatosVehiculares.CLASE_VEHICULAR_OPTION)
         );
 

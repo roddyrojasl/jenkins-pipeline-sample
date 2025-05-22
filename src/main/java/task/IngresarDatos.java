@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.Task;
 
 public class IngresarDatos implements Task {
 
-
+    private static String persona;
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -24,7 +24,7 @@ public class IngresarDatos implements Task {
         );
 
         actor.attemptsTo(
-                IngresarContrante.deVehiculo()
+                IngresarContrante.deVehiculo(persona)
         );
 
         actor.attemptsTo(
@@ -32,13 +32,14 @@ public class IngresarDatos implements Task {
         );
 
         actor.attemptsTo(
-                IngresarDatosComplementarios.deContratante()
+                IngresarDatosComplementarios.deContratante(persona)
         );
 
 
     }
 
-    public static Performable vehiculares() {
+    public static Performable vehiculares(String tipoPersona) {
+        persona = tipoPersona;
         return Instrumented.instanceOf(IngresarDatos.class).withProperties();
     }
 }

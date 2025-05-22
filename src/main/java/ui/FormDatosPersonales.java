@@ -27,6 +27,21 @@ public class FormDatosPersonales {
     public static Target CELULAR_INPUT = Target.the("Celular")
             .located(By.xpath("//input//following-sibling::label[contains(text(),'Celular')]/../input"));
 
+    public static Target ESCOGER_DOC_LIST = Target.the("Seleccionar tipo Doc")
+            .located(By.xpath("//input//following-sibling::label[contains(text(),'Tipo de doc')]/../input"));
+
+    public static Target ESCOGER_DOC_OPTION = Target.the("Seleccionar tipo Doc")
+            .located(By.xpath("//*[contains(text(), 'RUC')]"));
+
+
+    public static Target RAZON_SOCIAL_INPUT = Target.the("Razon social de contratante")
+            .located(By.xpath("//input//following-sibling::label[contains(text(),'social')]/../input"));
+
+    public static Target DIR_FISCAL_INPUT = Target.the("Razon social de contratante")
+            .located(By.xpath("//input//following-sibling::label[contains(text(),'fisca')]/../input"));
+
+
+
 
 
     public static Target ESCOGER_SEGURO_BUTTON = Target.the("Escoger seguro")

@@ -12,7 +12,7 @@ public class SeleccionarModelo implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(FormDatosVehiculares.MODELO_VEHICULO_SELECT),
+                Click.on(FormDatosVehiculares.MODELO_VEHICULO_LIST),
                 Click.on(FormDatosVehiculares.MODELO_VEHICULAR_OPTION)
         );
 

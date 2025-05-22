@@ -3,10 +3,15 @@ Feature: Cotizacion de SOAT
   Quiero usar la pagina web de interseguro
   Para cotizar y adquirir un SOAT
 
-  Background:
-    Given que "Ruben" navega en la pagina de cotizacion
 
-  Scenario: Cotizar SOAT de cliente
-    When ingresa la placa "FDS447" de su vehiculo
+  Scenario: Cotizar SOAT de cliente natural
+    Given que "Ruben" persona "natural" navega en la pagina de cotizacion
+    When ingresa la placa "FDS531" de su vehiculo
+    And los sus datos personales y del vehiculo
+    Then  Ruben valida su nuevo SOAT
+
+  Scenario: Cotizar SOAT de cliente persona juridica
+    Given que "Eduardo" persona "juridica" navega en la pagina de cotizacion
+    When ingresa la placa "FDS527" de su vehiculo
     And los sus datos personales y del vehiculo
     Then  Ruben valida su nuevo SOAT

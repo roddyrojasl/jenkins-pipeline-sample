@@ -12,7 +12,7 @@ public class SeleccionarMarca implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(FormDatosVehiculares.MARCA_VEHICULO_SELECT),
+                Click.on(FormDatosVehiculares.MARCA_VEHICULO_LIST),
                 Click.on(FormDatosVehiculares.MARCA_VEHICULAR_OPTION)
         );
 

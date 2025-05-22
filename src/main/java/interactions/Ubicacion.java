@@ -11,11 +11,11 @@ public class Ubicacion implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(FormDatosVehiculares.DEPARTAMENTOS_VEHICULO_SELECT),
+                Click.on(FormDatosVehiculares.DEPARTAMENTOS_VEHICULO_LIST),
                 Click.on(FormDatosVehiculares.DEPARTAMENTO_VEHICULAR_OPTION),
-                Click.on(FormDatosVehiculares.PROVINCIA_VEHICULO_SELECT),
+                Click.on(FormDatosVehiculares.PROVINCIA_VEHICULO_LIST),
                 Click.on(FormDatosVehiculares.PROVINCIA_VEHICULAR_OPTION),
-                Click.on(FormDatosVehiculares.DISTRITO_VEHICULO_SELECT),
+                Click.on(FormDatosVehiculares.DISTRITO_VEHICULO_LIST),
                 Click.on(FormDatosVehiculares.DISTRITO_VEHICULAR_OPTION),
                 Click.on(FormDatosVehiculares.CONTINUAR_BUTTON)
         );

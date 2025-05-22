@@ -9,13 +9,12 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <serenity.version>3.9.0</serenity.version>
         <junit.version>4.13.2</junit.version>
         <junit.jupiter.version>5.9.3</junit.jupiter.version>
-        <serenity-maven-plugin.version>2.0.0</serenity-maven-plugin.version>
+        <serenity-maven-plugin.version>3.9.0</serenity-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -75,6 +74,20 @@
             <version>2.2</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>7.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -82,16 +95,32 @@
             <plugin>
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
-                <version>2.0.0</version> <!-- Asegúrate de que esta versión sea la correcta -->
+                <version>3.9.0</version>
                 <executions>
                     <execution>
+                        <phase>verify</phase>
                         <goals>
                             <goal>aggregate</goal>
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <outputDirectory>target/serenity-reports</outputDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <serenity.outputDirectory>target/serenity-reports</serenity.outputDirectory>
+                    </systemPropertyVariables>
+                    <useFile>false</useFile> <!-- Evita la creación de archivos de reporte adicionales -->
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
 
 </project>

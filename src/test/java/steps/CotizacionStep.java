@@ -27,11 +27,13 @@ public class CotizacionStep {
     @Managed
     WebDriver driver;
 
+    String tipoPersona;
     private Actor actor;
 
 
-    @Given("que {string} navega en la pagina de cotizacion")
-    public void usuarioNavegaEnLaPagina(String nombre) {
+    @Given("que {string} persona {string} navega en la pagina de cotizacion")
+    public void usuarioNavegaEnLaPagina(String nombre, String tipoPersona) {
+        this.tipoPersona = tipoPersona;
         actor =  OnStage.theActorCalled(nombre);
         actor.can(BrowseTheWeb.with(driver));
         actor.attemptsTo(Open.browserOn().the(HomePage.class));
@@ -50,7 +52,7 @@ public class CotizacionStep {
     @And("los sus datos personales y del vehiculo")
     public void datosPersonalesYVehicular() {
         actor.attemptsTo(
-                IngresarDatos.vehiculares()
+                IngresarDatos.vehiculares(tipoPersona)
         );
 
     }
