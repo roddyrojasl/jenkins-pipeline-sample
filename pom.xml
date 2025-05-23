@@ -116,9 +116,18 @@
                     <systemPropertyVariables>
                         <serenity.outputDirectory>target/serenity-reports</serenity.outputDirectory>
                     </systemPropertyVariables>
-                    <useFile>false</useFile> <!-- Evita la creación de archivos de reporte adicionales -->
+                    <useFile>false</useFile>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <release>17</release>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
